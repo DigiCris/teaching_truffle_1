@@ -69,7 +69,7 @@ contract ERC20 {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) external returns (bool success) {
-        require(_allowance[_from][msg.sender] >= _value, "usted no puede gastar eso"); // causa de 0 transfer attack
+        require(_allowance[_from][msg.sender] >= _value, "usted no puede gastar eso"); //  causa de 0 transfer attack
         _allowance[_from][msg.sender] -= _value;
         _balanceOf[_from] -= _value;
         _balanceOf[_to] += _value;
